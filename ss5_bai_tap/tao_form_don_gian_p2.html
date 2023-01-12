@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form đơn giản phần 2</title>
+</head>
+<body style="background-color:mistyrose">
+    <form method="post" action="https://james.codegym.vn/mod/page/view.php?id=10390">
+        <h1 style="background-color: darkseagreen;color: blue">ĐĂNG KÝ HỌC VIÊN</h1>
+        <table>
+            <tr>
+                <td style="text-align: left;color: blue"> Họ và tên</td>
+                <td>
+                    <input type="text" name="name" id="Họ và tên">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;color: blue"> Ngày sinh</td>
+                <td>
+                    <input type="date" name="date" id="Ngày sinh">
+                </td>
+            </tr><tr>
+            <td style="text-align: left;color: blue"> Giới tính</td>
+            <td>
+                <input type="radio" name="gender" id="Giới tính"> Nam
+                <input type="radio" name="gender" id="Giới tính"> Nữ
+            </td>
+        </tr><tr>
+            <td style="text-align: left;color: blue"> Địa chỉ</td>
+            <td>
+                <textarea name="address" id="Địa chỉ" cols="10" rows="3"></textarea>
+            </td>
+        </tr><tr>
+            <td style="text-align: left;color: blue"> Lớp</td>
+            <td>
+               <select >
+                   <option selected>Chọn lớp</option>
+                   <option >11</option>
+                   <option>12</option>
+                   <option>10</option>
+               </select>
+            </td>
+        </tr><tr>
+            <td style="text-align: left;color: blue"> Email</td>
+            <td>
+                <input type="email" name="email" id="Email">
+            </td>
+        </tr><tr>
+            <td style="text-align: right;color: blue"> Điện thoại</td>
+            <td>
+                <input type="number" name="phone" id="Điện thoại">
+            </td>
+        </tr><tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </td>
+        </tr>
+
+        </table>
+    </form>
+</body>
+</html>
