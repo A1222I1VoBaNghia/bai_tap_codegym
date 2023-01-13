@@ -7,33 +7,38 @@
 <body style="background-color: aquamarine">
     <form style="background-color: white" method="post" action="http://demo.codegym.vn/6/registration_form/register.php">
         <h1 style="background-color: red;text-align:center;color: white "> SỞ THÍCH CỦA BẠN</h1>
-        <table>
+        <table >
             <tr style="text-align: right">
                 <th style="color: blue">Họ và tên</th>
-                <th>
+                <th colspan="3" style="text-align: left">
                     <input type="text" name="yourname" id=" Họ và tên">
                 </th>
             </tr>
             <tr style="text-align: right">
                 <th style="color: blue"> Email</th>
-                <td>
+                <td colspan="3" style="text-align: left">
                     <input type="email" name="email" id="Email">
                 </td>
             </tr>
+            <tr>
+                <th style="color: blue;text-align: right"> Sở thích</th>
+                <td style="color: red"><input type="checkbox" name="hobby"> Thể thao </td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Âm nhạc </td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Đọc sách </td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Lướt web </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Chơi game </td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Điện ảnh </td>
+                <td style="color: red"><input type="checkbox" name="hobby"> Du lịch </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Gửi thông tin"></td>
+                <td><input type="reset" value="Nhập lại"></td>
+            </tr>
         </table>
-            <p style="color:blue"> Sở thích</p>
-                <input style="color: red" type="checkbox" name="hobby"> Thể thao
-                <input style="color: red" type="checkbox" name="hobby"> Âm nhạc
-                <input style="color: red" type="checkbox" name="hobby"> Đọc sách
-                <br>
-                <input style="color: red" type="checkbox" name="hobby"> Lướt web
-                <input style="color: red" type="checkbox" name="hobby"> Chơi game
-                <input style="color: red" type="checkbox" name="hobby"> Điện ảnh
-                <br>
-                <input style="color: red" type="checkbox" name="hobby"> Du lịch
-        <br>
-        <input type="submit" value="Gửi thông tin">
-        <input type="reset" value="Nhập lại">
     </form>
 </body>
 </html>
