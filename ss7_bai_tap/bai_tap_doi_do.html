@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="number" id="cel">
+    <button onclick="doSth()"> Nhập độ C</button>
+    <p id="f"></p>
+  <script>
+    function doSth() {
+        let C = +document.getElementById("cel").value;
+        F = C*9/5 +32;
+        document.getElementById('f').innerText = "Độ F là: " + F;
+    }
+  </script>
+</body>
+</html>

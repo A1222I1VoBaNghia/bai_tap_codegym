@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="number" id="r">
+    <button onclick="doSth()">Nhập bán kính hình tròn</button>
+    <p id="s"></p>
+</body>
+    <script>
+        function doSth() {
+            let r = +document.getElementById('r').value;
+            S = r*r*3.14;
+            document.getElementById('s').innerText ="Diện tích hình tròn:" + S;
+        }
+    </script>
+</html>

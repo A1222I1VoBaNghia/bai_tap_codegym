@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai_tap_bien</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Điểm vật lý</td>
+            <td>
+                <input type="number" id="phy">
+            </td>
+        </tr>
+        <tr>
+            <td>Điểm hóa học</td>
+            <td>
+                <input type="number" id="che">
+            </td>
+        </tr>
+        <tr>
+            <td>Điểm sinh học</td>
+            <td>
+                <input type="number" id="bio">
+            </td>
+        </tr>
+        <tr>
+            <button type="submit" onclick="doSth()">Nhập điểm</button>
+        </tr>
+    </table>
+    <p id="ph1"></p>
+    <p id="ch1"></p>
+    <p id="bi1"></p>
+    <p id="su1"></p>
+    <p id="av1"></p>
+</body>
+<script>
+    function doSth() {
+        let phy = +document.getElementById("phy").value;
+        let che = +document.getElementById("che").value;
+        let bio = +document.getElementById("bio").value;
+        document.getElementById('ph1').innerText = "Điển Vật lý: " + phy;
+        document.getElementById('ch1').innerText = "Điểm Hóa học: " + che;
+        document.getElementById('bi1').innerText = "Điểm Sinh học:" + bio;
+        document.getElementById('su1').innerText = "Tổng điểm 3 môn:" + (phy +che +bio);
+        document.getElementById('av1').innerText = "Điểm trung bình:" + (phy+che+bio)/3;
+
+    }
+</script>
+</html>

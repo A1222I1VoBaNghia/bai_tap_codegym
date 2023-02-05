@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="number" id="bk">
+    <button onclick="doSth()"> Nhập bán kính hình tròn</button>
+    <p id="c"></P>
+</body>
+<script>
+    function doSth() {
+    let r = +document.getElementById('bk').value;
+    C = r*2*3.14;
+    document.getElementById('c').innerText = "Chu vi hình tròn là:" + C;
+    }
+
+</script>
+</html>

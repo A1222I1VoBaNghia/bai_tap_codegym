@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form>
+     <table>
+         <tr>
+             <td width="150"> Amount</td>
+             <td width="150"> From Currency</td>
+             <td width="150"> To Currency</td>
+         </tr>
+         <tr>
+             <td>
+                 <input type="number" id="num">
+             </td>
+             <td>
+                 <select id="frcu">
+                     <option id="vn">Vietnam</option>
+                     <option id="usd">USD</option>
+                     <option id="eu">Euro</option>
+                     <option id="gbp">GBP</option>
+                     <option id="jp">Yen</option>
+                 </select>
+             </td>
+             <td>
+                 <select id="tocu">
+                     <option id="vn1">Vietnam</option>
+                     <option id="usd1">USD</option>
+                     <option id="eu1">Euro</option>
+                     <option id="gbp1">GBP</option>
+                     <option id="jp1">Yen</option>
+                 </select>
+             </td>
+             <td>
+                 <button type="submit" style="color: white; background-color: blue" onclick="doSth()"> Convert </button>
+             </td>
+         </tr>
+     </table>
+     <p id="conv"></p>
+ </form>
+</body>
+<script>
+    function doSth() {
+        let cur = +document.getElementById('num').value;
+        let frcu = document.getElementById('frcu').value;
+        let tocu = document.getElementById('tocu').value;
+        const vn = 1;
+        const usd = 23300;
+        const gbp = 26000;
+        const jp = 160;
+        const eu = 24000;
+
+        if ((frcu === "Vietnam")&&(tocu === "Vietnam")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur/vn;
+        }
+        if ((frcu==="Vietnam")&&(tocu==="USD")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur/usd;
+            }
+        if ((frcu==="Vietnam")&&(tocu==="GBP")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur/gbp;
+        }
+        if ((frcu==="Vietnam")&&(tocu==="Euro")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur/eu;
+        }
+        if ((frcu==="Vietnam")&&(tocu==="Yen")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur/jp;
+        }
+
+        if ((frcu === "USD")&&(tocu === "USD")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*usd/usd;
+        }
+        if ((frcu === "USD")&&(tocu === "Euro")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*usd/eu;
+        }
+        if ((frcu === "USD")&&(tocu === "GBP")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*usd/gbp;
+        }
+        if ((frcu === "USD")&&(tocu === "Yen")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*usd/jp;
+        }
+        if ((frcu === "USD")&&(tocu === "Vietnam")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*usd;
+        }
+
+        if ((frcu === "Euro")&&(tocu === "USD")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*eu/usd;
+        }
+        if ((frcu === "Euro")&&(tocu === "Euro")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*eu/eu;
+        }
+        if ((frcu === "Euro")&&(tocu === "GBP")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*eu/gbp;
+        }
+        if ((frcu === "Euro")&&(tocu === "Yen")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*eu/jp;
+        }
+        if ((frcu === "Euro")&&(tocu === "Vietnam")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*eu;
+        }
+
+        if ((frcu === "GBP")&&(tocu === "USD")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*gbp/usd;
+        }
+        if ((frcu === "GBP")&&(tocu === "Euro")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*gbp/eu;
+        }
+        if ((frcu === "GBP")&&(tocu === "GBP")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*gbp/gbp;
+        }
+        if ((frcu === "GBP")&&(tocu === "Yen")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*gbp/jp;
+        }
+        if ((frcu === "GBP")&&(tocu === "Vietnam")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*gbp;
+        }
+
+        if ((frcu === "Yen")&&(tocu === "USD")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*jp/usd;
+        }
+        if ((frcu === "Yen")&&(tocu === "Euro")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*jp/eu;
+        }
+        if ((frcu === "Yen")&&(tocu === "GBP")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*jp/gbp;
+        }
+        if ((frcu === "Yen")&&(tocu === "Yen")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*jp/jp;
+        }
+        if ((frcu === "Yen")&&(tocu === "Vietnam")){
+            document.getElementById('conv').innerText = "Số tiền là:" + cur*jp;
+        }
+    }
+</script>
+</html>
