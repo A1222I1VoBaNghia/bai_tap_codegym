@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <form>
+        <button type="button" id="good"> good</button>
+        <button type="button" value="fast" id="fast"> fast</button>
+        <button type="button" value="cheap" id="cheap"> cheap</button>
+        <button type="submit" onclick="doSth()"></button>
+    </form>
+    <p id="out"></p>
+  <script>
+      let good = document.getElementById('good');
+      let fast = document.getElementById('fast');
+      let cheap = document.getElementById('cheap');
+      function doSth() {
+          switch (true) {
+              case good && cheap && !fast:
+                  document.getElementById('out').innerText = "not Fast";
+                  break;
+              case good && fast && !cheap:
+                  document.getElementById('out').innerText = "not Cheap";
+                  break;
+              case cheap && fast && !good:
+                  document.getElementById('out').innerText = "not Good";
+
+          }
+      }
+  </script>
 </body>
 </html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td> Nhập số a</td>
+            <td> Nhập số b</td>
+        </tr>
+        <tr>
+            <td>
+                <input id="num1">
+            </td>
+            <td>
+            <input id="num2">
+        </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" onclick="check()">Kiểm tra chia hết</button>
+            </td>
+        </tr>
+    </table>
+    <p id="out"></p>
+</body>
+</html>
+<script>
+    function check() {
+        let num1 = +document.getElementById('num1').value;
+        let num2 = +document.getElementById('num2').value;
+        let result = num1 % num2;
+        if (String(result) === "0"){
+            document.getElementById('out').innerText = num1 + " chia hết cho " + num2;
+        }else
+            document.getElementById('out').innerText = num1 + " không chia hết cho " + num2;
+    }
+</script>

@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
+    <style>
+        .note {
+            background-color: ghostwhite;
+            color: blue;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            border: 2px solid gray;
+
+        }
+        .row {
+            border-spacing: inherit;
+        }
+    </style>
 <body>
-$END$
+
+    <form method="post">
+    <table border="2px" >
+        <tr>
+            <td colspan="4" height="50" width="200" id="out"></td>
+        </tr>
+        <tr class="row">
+            <td class="note" >
+                <input type="button" value="1" id="num">
+            </td>
+            <td class="note">
+                <input value="2" type="button" id="num">
+            </td>
+            <td class="note">
+                <input value="3" type="button" id="num">
+            </td>
+            <td class="note">
+                <input type="button" value="+" onclick="addSth()">
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="note" >
+                <input value="4" type="button">
+            </td>
+            <td class="note">
+                <input value="5" type="button">
+            </td>
+            <td class="note">
+                <input value="6" type="button">
+            </td>
+            <td class="note">
+                <input type="button" value="-">
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="note" >
+                <input value="7" type="button">
+            </td>
+            <td class="note">
+                <input value="8" type="button">
+            </td>
+            <td class="note">
+                <input value="9" type="button">
+            </td>
+            <td class="note">
+                <input type="button" value="X">
+            </td>
+        </tr>
+        <tr class="row">
+            <td class="note" >
+                <button type="reset">C</button>
+            </td>
+            <td class="note">
+                <input value="0" type="button">
+            </td>
+            <td class="note">
+                <button value ="=" type="submit" onclick="submidSth()"> = </button>
+            </td>
+            <td class="note">
+                <input type="button" value="/">
+            </td>
+        </tr>
+    </table>
+    </form>
 </body>
 </html>
+<script>
+    let num = document.getElementById('num').value;
+    document.getElementById('out').innerText = num;
+    // function submidSth() {
+    //     let i = 0;
+    //     while (i < 100){
+    //         let num = +document.getElementById('num').value;
+    //         i++
+    //         document.getElementById('out').innerText = num;
+    //     }
+    //     document.getElementById('out').innerText = "A";
+    // }
+
+
+
+
+</script>

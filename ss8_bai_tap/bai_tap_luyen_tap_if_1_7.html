@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .note {
+        text-align: center;
+        color: blue;
+    }
+</style>
+<body>
+
+    <table border="1px">
+        <tr>
+            <td colspan="2" style="text-align: center">Cước điện thoại</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"> Số phút đã gọi</td>
+        </tr>
+        <tr>
+            <td> Số phút </td>
+            <td> Giá cước </td>
+        </tr>
+        <tr>
+            <td> dưới 30p </td>
+            <td> 100d/p </td>
+        </tr>
+        <tr>
+            <td> dưới 100p </td>
+            <td> 200d/p </td>
+        </tr>
+        <tr>
+            <td> dưới 500p </td>
+            <td> 500d/p </td>
+        </tr>
+        <tr>
+            <td> từ 500p trở lên </td>
+            <td> 1000d/p </td>
+        </tr>
+    </table>
+    <input id="cuoc">
+    <button type="submit" onclick="calcMoney()">Tính tiền</button>
+    <p id="out"></p>
+</body>
+</html>
+<script>
+    function calcMoney() {
+        let sec = +document.getElementById('cuoc').value;
+        const p1 = 100; // dưới 30p gọi//
+        const p2 = 200; // dưới 100p gọi//
+        const p3 = 500; // dưới 500p gọi//
+        const p4 = 1000;// từ 500p gọi trở lên//
+        if (sec < 30){
+            document.getElementById('out').innerText = "Phí cước là" + sec*100 + "đồng";
+        }else if (sec < 100) {
+            document.getElementById('out').innerText = "Phí cước là" + sec*200 + "đồng";
+        }else if (sec < 500){
+            document.getElementById('out').innerText = "Phí cước là" + sec*500 + "đồng";
+        }else
+            document.getElementById('out').innerText = "Phí cước là" + sec*1000 + "đồng";
+
+
+
+    }
+</script>
