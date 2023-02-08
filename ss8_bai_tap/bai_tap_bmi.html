@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="height" type="number"> Chiều cao (m)
+    <input id="weight" type=" number"> Cân nặng (kg)
+    <button type="submit" onclick="doSth()"> Tính chỉ số khối cơ thể </button>
+    <p id="bmi"></p>
+    <p id ='bmi2'></p>
+</body>
+</html>
+<script>
+    function doSth(){
+        let height = +document.getElementById("height").value;
+        let weight = +document.getElementById("weight").value;
+        let bmi = weight/(height*height);
+        document.getElementById('bmi').innerText = "Chỉ số khối cơ thể là:" + bmi;
+        if(bmi<18.5) {
+            document.getElementById('bmi2').innerText = "Thiếu cân";
+        }else if (bmi < 25){
+            document.getElementById('bmi2').innerText = "Bình thường";
+        }else if (bmi<30){
+            document.getElementById('bmi2').innerText = "Thừa cân";
+        }else
+            document.getElementById('bmi2').innerText = "Béo phì";
+    }
+</script>
