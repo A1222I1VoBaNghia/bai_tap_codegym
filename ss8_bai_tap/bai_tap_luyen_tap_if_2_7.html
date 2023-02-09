@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let a = +prompt('Nhập a:');
+    let b = +prompt('Nhập b:');
+    let c = +prompt('Nhập c:');
+    if (!isNaN(a)&&!isNaN(b)&&!isNaN(c)&&a!==0){
+        let delta = b*b/4*a*c
+        let sqrDelta =Math.sqrt(delta);
+        if (delta < 0){
+            document.write("Phương trình: " +a +"x"+"<sup>2</sup> + "+b+"x +"+c +"= 0 vô nghiệm");
+        }else if (delta === 0){
+            document.write("Phương trình: " +a +"x"+"<sup>2</sup> + "+b+"x +"+c +"= 0 có 1 nghiệm kép x1 = x2= " + b/2*a);
+        }else
+            document.write("Phương trình: " +a +"x"+"<sup>2</sup> + "+b+"x +"+c +"= 0 có 2 nghiệm x1 = "+ (-b+sqrDelta)/2*a+" và nghiệm x2 = "+ (-b-sqrDelta)/2*a );
+    }else
+        document.write("Cần nhập dạng số");
+
+</script>

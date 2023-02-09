@@ -19,86 +19,68 @@
         }
     </style>
 <body>
-
-    <form method="post">
     <table border="2px" >
         <tr>
             <td colspan="4" height="50" width="200" id="out"></td>
         </tr>
         <tr class="row">
             <td class="note" >
-                <input type="button" value="1" id="num">
+                <input type="button" value="1" id="num1">
             </td>
             <td class="note">
-                <input value="2" type="button" id="num">
+                <input value="2" type="button" id="num2">
             </td>
             <td class="note">
-                <input value="3" type="button" id="num">
+                <input value="3" type="button" id="num3">
             </td>
             <td class="note">
-                <input type="button" value="+" onclick="addSth()">
+                <input type="button" value="+" onclick="addSth()" id="add">
             </td>
         </tr>
         <tr class="row">
             <td class="note" >
-                <input value="4" type="button">
+                <input value="4" type="button" id="num4">
             </td>
             <td class="note">
-                <input value="5" type="button">
+                <input value="5" type="button" id=" num5">
             </td>
             <td class="note">
-                <input value="6" type="button">
+                <input value="6" type="button" id="num6">
             </td>
             <td class="note">
-                <input type="button" value="-">
+                <input type="button" value="-" onclick="subSth()" id="sub">
             </td>
         </tr>
         <tr class="row">
             <td class="note" >
-                <input value="7" type="button">
+                <input value="7" type="button" id="7">
             </td>
             <td class="note">
-                <input value="8" type="button">
+                <input value="8" type="button" id ="8">
             </td>
             <td class="note">
-                <input value="9" type="button">
+                <input value="9" type="button" id="9">
             </td>
             <td class="note">
-                <input type="button" value="X">
+                <input type="button" value="X" onclick="mulSth()" id="mul">
             </td>
         </tr>
         <tr class="row">
             <td class="note" >
-                <button type="reset">C</button>
+                <button type="reset" onclick="resSth()">C</button>
             </td>
             <td class="note">
-                <input value="0" type="button">
+                <input value="0" type="button" id="0">
             </td>
             <td class="note">
-                <button value ="=" type="submit" onclick="submidSth()"> = </button>
+                <button value = "=" type="submit" onclick="submidSth()"> = </button>
             </td>
             <td class="note">
-                <input type="button" value="/">
+                <input type="button" value="/" onclick="divSth()" id="div">
             </td>
         </tr>
     </table>
-    </form>
 </body>
 </html>
 <script>
-    let num = document.getElementById('num').value;
-    document.getElementById('out').innerText = num;
-    // function submidSth() {
-    //     let i = 0;
-    //     while (i < 100){
-    //         let num = +document.getElementById('num').value;
-    //         i++
-    //         document.getElementById('out').innerText = num;
-    //     }
-    //     document.getElementById('out').innerText = "A";
-    // }
-
-
-
-
 </script>

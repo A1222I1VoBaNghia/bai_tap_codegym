@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td colspan="2">Bảng tính mức giá điện</td>
+        </tr>
+        <tr>
+            <td>Số kWh điện tiêu thụ</td>
+            <td>Giá tiền mỗi kWh tiêu thụ</td>
+        </tr>
+        <tr>
+            <td>100 kWh</td>
+            <td> 1500 đồng/kWh</td>
+        </tr>
+        <tr>
+            <td>200 kWh</td>
+            <td> 2000 đồng/kWh</td>
+        </tr>
+        <tr>
+            <td>300 kWh</td>
+            <td> 2500 đồng/kWh</td>
+        </tr>
+        <tr>
+            <td>500 kWh</td>
+            <td> 3000 đồng/kWh</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
+    <script>
+        let elec = +prompt("Nhập số điện tiêu thụ: Đơn vị (kWh)");
+        const m1 = 1500;
+        const m2 = 2000;
+        const m3 = 2500;
+        const m4 = 3000;
+        if (!isNaN(elec)) {
+            if (elec <= 100) {
+                alert("Tiền điện phải trả là: " + elec * m1 + " đồng");
+            }else if(elec <= 200) {
+                alert("Tiền điện phải trả là: " + elec * m2 + " đồng");
+            }else if (elec<=300){
+                alert("Tiền điện phải trả là: "+ elec*m3 + " đồng");
+            }else
+                alert("Tiền điện phải trả là: "+ elec*m4 + " đồng");
+        }else
+        alert("Cần nhập dạng số");
+    </script>

@@ -53,13 +53,13 @@
         const p3 = 500; // dưới 500p gọi//
         const p4 = 1000;// từ 500p gọi trở lên//
         if (sec < 30){
-            document.getElementById('out').innerText = "Phí cước là" + sec*100 + "đồng";
+            document.getElementById('out').innerText = "Phí cước là" + sec*p1 + "đồng";
         }else if (sec < 100) {
-            document.getElementById('out').innerText = "Phí cước là" + sec*200 + "đồng";
+            document.getElementById('out').innerText = "Phí cước là" + sec*p2 + "đồng";
         }else if (sec < 500){
-            document.getElementById('out').innerText = "Phí cước là" + sec*500 + "đồng";
+            document.getElementById('out').innerText = "Phí cước là" + sec*p3 + "đồng";
         }else
-            document.getElementById('out').innerText = "Phí cước là" + sec*1000 + "đồng";
+            document.getElementById('out').innerText = "Phí cước là" + sec*p4 + "đồng";
 
 
 
