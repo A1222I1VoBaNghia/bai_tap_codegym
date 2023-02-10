@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<INPUT type="button" id="btn1" value="1" onclick="write1()">
+<INPUT type="button" id="btn2" value="2" onclick="write2()">
+<INPUT type="button" id="btn3" value="3" onclick="write3()">
+
+
+
+<button type="submit" onclick="calc()">=</button>
+<p id="out"></p>
+</body>
+</html>
+<script>
+    let stringCalc=0;
+    function write1(){
+        let btn1 = document.getElementById('btn1').value;
+        stringCalc=stringCalc+btn1;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write2(){
+        let btn2 = document.getElementById('btn2').value;
+        stringCalc=stringCalc+btn2;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write3(){
+        let btn3 = document.getElementById('btn3').value;
+        stringCalc=stringCalc+btn3;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write4(){
+        let btn4 = document.getElementById('btn4').value;
+        stringCalc=stringCalc+btn4;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write5(){
+        let btn5 = document.getElementById('btn5').value;
+        stringCalc=stringCalc+btn5;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeAdd(){
+        let btnAdd = document.getElementById('btnAdd').value;
+        stringCalc=stringCalc+btnAdd;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeSub(){
+        let btnSub = document.getElementById('btnSub').value;
+        stringCalc=stringCalc+btnSub;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function calc() {
+        let result =(stringCalc.slice(1));
+
+        document.getElementById('out').innerText =eval(result);
+
+    }
+
+
+</script>

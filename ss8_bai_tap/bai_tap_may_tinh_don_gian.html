@@ -4,83 +4,109 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-    <style>
-        .note {
-            background-color: ghostwhite;
-            color: blue;
-            height: 40px;
-            width: 40px;
-            text-align: center;
-            border: 2px solid gray;
-
-        }
-        .row {
-            border-spacing: inherit;
-        }
-    </style>
 <body>
-    <table border="2px" >
+    <table border="1px">
         <tr>
-            <td colspan="4" height="50" width="200" id="out"></td>
+            <td width="164" height="50" id="out"></td>
         </tr>
-        <tr class="row">
-            <td class="note" >
-                <input type="button" value="1" id="num1">
-            </td>
-            <td class="note">
-                <input value="2" type="button" id="num2">
-            </td>
-            <td class="note">
-                <input value="3" type="button" id="num3">
-            </td>
-            <td class="note">
-                <input type="button" value="+" onclick="addSth()" id="add">
-            </td>
-        </tr>
-        <tr class="row">
-            <td class="note" >
-                <input value="4" type="button" id="num4">
-            </td>
-            <td class="note">
-                <input value="5" type="button" id=" num5">
-            </td>
-            <td class="note">
-                <input value="6" type="button" id="num6">
-            </td>
-            <td class="note">
-                <input type="button" value="-" onclick="subSth()" id="sub">
-            </td>
-        </tr>
-        <tr class="row">
-            <td class="note" >
-                <input value="7" type="button" id="7">
-            </td>
-            <td class="note">
-                <input value="8" type="button" id ="8">
-            </td>
-            <td class="note">
-                <input value="9" type="button" id="9">
-            </td>
-            <td class="note">
-                <input type="button" value="X" onclick="mulSth()" id="mul">
-            </td>
-        </tr>
-        <tr class="row">
-            <td class="note" >
-                <button type="reset" onclick="resSth()">C</button>
-            </td>
-            <td class="note">
-                <input value="0" type="button" id="0">
-            </td>
-            <td class="note">
-                <button value = "=" type="submit" onclick="submidSth()"> = </button>
-            </td>
-            <td class="note">
-                <input type="button" value="/" onclick="divSth()" id="div">
-            </td>
-        </tr>
-    </table>
+    </table> </br>
+    <INPUT type="button" id="btn1" value="1" onclick="write1()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn2" value="2" onclick="write2()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn3" value="3" onclick="write3()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btnAdd" value="+" onclick="writeAdd()" style="width: 40px; height: 40px"> </br></br>
+    <INPUT type="button" id="btn4" value="4" onclick="write4()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn5" value="5" onclick="write5()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn6" value="6" onclick="write6()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btnSub" value="-" onclick="writeSub()" style="width: 40px; height: 40px"> </br></br>
+    <INPUT type="button" id="btn7" value="7" onclick="write7()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn8" value="8" onclick="write8()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btn9" value="9" onclick="write9()" style="width: 40px; height: 40px">
+    <INPUT type="button" id="btnMul" value="*" onclick="writeMul()" style="width: 40px; height: 40px"> </br></br>
+    <button type="reset" onclick="del()" style="width: 40px; height: 40px">C</button>
+    <INPUT type="button" id="btn0" value="0" onclick="write0()" style="width: 40px; height: 40px">
+    <button type="submit" onclick="calc()" style="width: 40px; height: 40px">=</button>
+    <INPUT type="button" id="btnDiv" value="/" onclick="writeDiv()" style="width: 40px; height: 40px">
 </body>
 </html>
 <script>
+    let stringCalc=0;
+    function write1(){
+        let btn1 = document.getElementById('btn1').value;
+        stringCalc=stringCalc+btn1;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write2(){
+        let btn2 = document.getElementById('btn2').value;
+        stringCalc=stringCalc+btn2;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write3(){
+        let btn3 = document.getElementById('btn3').value;
+        stringCalc=stringCalc+btn3;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeAdd(){
+        let btnAdd = document.getElementById('btnAdd').value;
+        stringCalc=stringCalc+btnAdd;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write4(){
+        let btn4= document.getElementById('btn4').value;
+        stringCalc=stringCalc+btn4;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write5(){
+        let btn5 = document.getElementById('btn5').value;
+        stringCalc=stringCalc+btn5;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write6(){
+        let btn6 = document.getElementById('btn6').value;
+        stringCalc=stringCalc+btn6;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeSub(){
+        let btnSub = document.getElementById('btnSub').value;
+        stringCalc=stringCalc+btnSub;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write7(){
+        let btn7 = document.getElementById('btn7').value;
+        stringCalc=stringCalc+btn7;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write8(){
+        let btn8 = document.getElementById('btn8').value;
+        stringCalc=stringCalc+btn8;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function write9(){
+        let btn9 = document.getElementById('btn9').value;
+        stringCalc=stringCalc+btn9;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeMul(){
+        let btnMul = document.getElementById('btnMul').value;
+        stringCalc=stringCalc+btnMul;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function del(){
+       document.getElementById('out').innerText = stringCalc.slice(0,1);
+       stringCalc = 0;
+    }
+    function write0(){
+        let btn0 = document.getElementById('btn0').value;
+        stringCalc=stringCalc+btn0;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function writeDiv(){
+        let btnDiv = document.getElementById('btnDiv').value;
+        stringCalc=stringCalc+btnDiv;
+        document.getElementById('out').innerText = stringCalc;
+    }
+    function calc() {
+        let result = (stringCalc.slice(1));
+        document.getElementById('out').innerText = eval(result);
+    }
+
 </script>
