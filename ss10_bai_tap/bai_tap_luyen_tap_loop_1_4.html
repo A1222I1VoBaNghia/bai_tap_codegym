@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n1 = + prompt("nhập số đầu tiên của dãy fibo: "), n2 =0, fibo;
+
+    for (let i = 0; i < 20 ; i++) {
+        fibo =n1;
+        if (fibo!==0 && fibo%5===0){
+            document.write("Số đầu tiền của dãy fibo bắt đầu bằng chia hết cho 5 là: " + fibo);
+            break;
+        }
+        n1 = n1 +n2;
+        n2 = fibo;
+    }
+</script>
+</body>
+</html>
