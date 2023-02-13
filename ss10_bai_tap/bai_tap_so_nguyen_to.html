@@ -7,17 +7,23 @@
 <body>
 <p id="out"></p>
 <script>
-    let num = +prompt('Nhập số nguyên tố cần in ra: ');
-    let count = 0;
-    for (let n=2;count<num;n++){
-        if (num <2){
-            document.write(n);
-        }else if (n>=2){
-            for (i =3; i < num -1; i+=2){
+    let number = +prompt("Nhập số lượng số nguyên tố muốn in:");
+    let count1 = 0;
+    let i = 0;
+    if (count1 <= number) {
+        for (let n = 2; count1 < number; n++) {
+            let isPrime = true;
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    isPrime = false;
+                    break;
+                }
             }
+            if (isPrime){
+                document.write(n + ", ");
+                count1++;}
         }
     }
-
 </script>
 </body>
 </html>
