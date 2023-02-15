@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("Nhập tiền lương: (Đơn vị: triệu đồng)");
+    const tax1 = 0.05; //<=5tr
+    const tax2 = 0.1;  //10>=x>5
+    const tax3 = 0.15; //18>=x>10
+    const tax4 = 0.2;  //32>=x>18
+    const tax5 = 0.25; //52>=x>32
+    const tax6 = 0.3;  //80>=x>52
+    const tax7 = 0.35; //>80
+    if (!isNaN(salary)){
+        if (salary<=5){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (salary*tax1)+ " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary -(salary*tax1)) + " triệu đồng");
+        }else if(salary <=10&&salary>5){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (0.25+(salary-5)*tax2) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary -(0.25+(salary-5)*tax2)) + " triệu đồng");
+        }else if (salary<=18&&salary>10){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (0.75 + (salary-10)*tax3) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary -(0.75 + (salary-10)*tax3)) + " triệu đồng");
+        }else if (salary <=32&&salary>18){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (1.95 + (salary-18)*tax4) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary - (1.95 + (salary-18)*tax4)) + " triệu đồng");
+        }else if (salary <=52&&salary>32){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (4.75 + (salary-32)*tax5) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary - (4.75 + (salary-32)*tax5)) + " triệu đồng");
+        }else if (salary <=80&&salary>52){
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (9.75 + (salary-52)*tax6) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary -(9.75 + (salary-52)*tax6)) + " triệu đồng");
+        }else{
+            alert("Thuế thu nhập cá nhân phải đóng là: " + (18.15 + (salary-80)*tax7) + " triệu đồng");
+            alert("Tiền lương thực nhận là:" + (salary -(18.15 + (salary-80)*tax7)) + " triệu đồng");}
+    }else
+        alert("Cần nhập đúng dạng số");
+
+</script>
+</body>
+</html>
