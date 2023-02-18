@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numArr1 = [];
+    let numArr2 = [];
+    let numArr3 = [];
+    for (let i = 0; i < 10 ; i++) {
+        numArr1[i] = +prompt("Nhập số nguyên bất kỳ cho mảng 1");
+    }
+    for (let j = 0; j < 10 ; j++) {
+        numArr2[j] = +prompt("Nhập số nguyên bất kỳ cho mảng 2");
+    }
+    document.write(numArr1 + "<br>");
+    document.write(numArr2 + "<br>");
+    numArr3.push(numArr1);
+    numArr3.push(numArr2);
+    document.write(numArr3 + "<br>");
+</script>
+</body>
+</html>

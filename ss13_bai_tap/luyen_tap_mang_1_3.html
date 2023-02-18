@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let k = +prompt("Nhập số số nguyên muốn thêm vào");
+    let numsArr = [];
+    let max = 0;
+    let sum = 0;
+    for (let i = 0; i < k ; i++) {
+        numsArr[i] = +prompt("Nhập số nguyên bất kỳ");
+        if (numsArr[i] >= max) {
+        max = numsArr[i];
+        }
+        sum+=numsArr[i];
+    }
+    document.write("Giá trị lớn nhất của mảng là: "+ max + "<br>");
+    document.write("Giá trị trung bình của mảng là: "+ sum/k);
+
+
+
+</script>
+</body>
+</html>

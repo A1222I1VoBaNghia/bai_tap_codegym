@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào 1 câu");
+    let k = str.length;
+    let count = 0;
+    let strArr =[];
+    for (let i = 0; i < k; i++) {
+        strArr[i] = str.slice(i,i+1);
+        if (strArr[i] === " "){
+            count++;
+        }
+    }
+    document.write(strArr);
+    document.write("Số từ của câu là: " + (count+1));
+</script>
+</body>
+</html>
