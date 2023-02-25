@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findCoincisive(arr,a) {
+        let count = 0;
+        let count1 = 0
+        for (let j = 0; j < arr.length ; j++) {
+            if(a === arr[j]){
+                count ++;
+            }else count1 ++;
+        }
+        if(count1===arr.length){
+            document.write(-1);
+        }else document.write("Số lần trùng là:"+ count);
+
+    }
+    let str = prompt("nhập chuỗi ký tự bất kỳ");
+    let strArr = [];
+    for (let i = 0; i <str.length ; i++) {
+        strArr[i]=str.slice(i,i+1);
+    }
+    let s = prompt("Nhập ký tự bất kỳ để kiểm tra");
+    findCoincisive(strArr,s);
+</script>
+</body>
+</html>

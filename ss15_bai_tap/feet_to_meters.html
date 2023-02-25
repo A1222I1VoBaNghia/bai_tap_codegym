@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <th colspan="2">CHUYỂN ĐỔI FEET - METERS</th>
+    <tr>
+        <td colspan="2">
+            <input id="valueIn" style="width: 250px">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" onclick="feetToMetters(document.getElementById('valueIn').value)" value="Feet To Meters">
+        </td>
+        <td>
+            <input type="button" onclick="mettersToFeet(document.getElementById('valueIn').value)" value="Meters To Feet">
+        </td>
+    </tr>
+    <tr>
+        <td id="out" colspan="2"></td>
+    </tr>
+</table>
+<script>
+    function feetToMetters(num) {
+        document.getElementById('out').innerText= "Giá trị met sau chuyển đổi từ feet là: " + num*0.305;
+    }
+    function mettersToFeet(num) {
+        document.getElementById('out').innerText= "Giá trị feet sau chuyển đổi từ met là: " + num*3.279;
+    }
+
+</script>
+</body>
+</html>

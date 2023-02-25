@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let starArr = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulu'];
+    let constellationArr = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major','Leo'];
+    function checkStar(star) {
+        for (let i = 0; i <starArr.length ; i++) {
+            if (star === starArr[i]){
+                document.write(constellationArr[i]);
+            }else document.write("Không tìm thấy chòm sao phù hơp");
+        }
+    }
+    let star = prompt("Nhập ngôi sao muốn kiểm tra");
+    checkStar(star);
+</script>
+</body>
+</html>

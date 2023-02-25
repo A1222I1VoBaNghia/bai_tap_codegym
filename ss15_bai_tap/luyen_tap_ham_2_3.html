@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function calcFactorial(n) {
+        let f = 1;
+        for (let i = 1; i <= n ; i++) {
+            f=f*i;
+        }
+        document.write("Giai thừa của " + n + " là:"+ f);
+    }
+    let num= +prompt("Nhập số nguyên bất kỳ để tính giai thừa");
+    calcFactorial(num);
+</script>
+</body>
+</html>
