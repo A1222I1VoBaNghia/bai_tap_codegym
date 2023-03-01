@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let count =0;
+    let str1 = prompt("Nhập vào xâu ký tự 1");
+    let str1Arr = [];
+    for (let i = 0; i <str1.length ; i++) {
+        str1Arr[i]=str1.slice(i,i+1);
+    }
+    let str2 = prompt("Nhập vào xâu ký tự 2");
+    let str2Arr = [];
+    for (let j = 0; j <str2.length ; j++) {
+        str2Arr[j]=str2.slice(j,j+1);
+    }
+    document.write(str1Arr+ "<br>");
+    document.write(str2Arr+ "<br>");
+    for (let k = str1Arr.length-1; k>=0 ; k--) {
+        for (let l = str2Arr.length-1; l >=0 ; l--) {
+            if (str1Arr[k]===str2Arr[l]){
+                str1Arr.splice(k,k+1);
+                str2Arr.splice(l,l+1);
+                count++;
+            }
+        }
+        }
+    document.write("Số ký tự giống nhau ở 2 chuỗi là: "+count);
+</script>
 </body>
 </html>

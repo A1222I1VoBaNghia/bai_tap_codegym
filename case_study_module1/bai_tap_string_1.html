@@ -5,6 +5,43 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let str = prompt("Nhập vào một đoạn văn");
+    let strArr = [];
+    let wordArr = [];
+    let max = 0;
+    let index=0;
+    for (let i = 0; i <str.length ; i++) {
+    strArr[i] = str.slice(i,i+1).toLowerCase();
+    }
+    for (let i = strArr.length; i>=0  ; i--) {
+        if (strArr[i]===" "&&strArr[i+1]===" "){
+            strArr.splice(i,1);
+    }
+    };
+    for (let j = strArr.length; j >=0; j--) {
+        if (strArr[j]===" "&&strArr[j+1]!==strArr[j+1].toUpperCase()){
+            strArr[j+1] = strArr[j+1].toUpperCase();
+        }
+    };
+        strArr[0]=strArr[0].toUpperCase();
+    document.write("Chuỗi trả về sau khi chỉnh sửa: " + strArr.join("")+ "<br>");
+    str = strArr.join("");
+    for (let i = str.length; i >= 0 ; i--) {
+        if (strArr[i] === " " || i === 0) {
+            wordArr.unshift(str.slice(i, str.length));
+            str = str.slice(0, i);
+        }
+    }
+    for (let x = 0; x <wordArr.length ; x++) {
+       if(max<wordArr[x].length){
+           max = wordArr[x].length;
+           index = x;
+       }
+       if (x === wordArr.length-1){
+           document.write("Ký tự dài nhất của chuỗi là: "+ wordArr[index]);
+       }
+    }
+</script>
 </body>
 </html>

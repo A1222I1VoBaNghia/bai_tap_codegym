@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findIntNum(m,n,arr) {
+        let count = 0;
+        for (let i = 0; i < m ; i++) {
+            for (let j = 0; j < n ; j++) {
+                let flat = true;
+                if(arr[i][j] < 2){
+                flat = false;
+                }else if (arr[i][j] ===2){
+                flat = true;
+                }else if(arr[i][j]%2===0){
+                flat =false;
+                }else {
+                for (let k = 3; k < arr[i][j]-1; k+=2) {
+                    if(arr[i][j]%k===0){
+                    flat=false;
+                    break;
+                    }
+                }
+                }
+                if(flat===true) {
+                    count++;
+                    document.write(arr[i][j] + ", ");
+                }
+            }
+
+        }
+        document.write("</br>" + "SỐ số nguyên tố trong mảng là: "+count);
+    }
+    let m = +prompt("Nhập chiều dài ma trận");
+    let n = +prompt("Nhập chiều dài ma trận");
+    let arr = [];
+    for (let i = 0; i < m; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = +prompt("Nhập các số nguyên bất kỳ cho mảng 2 chiều");
+        }
+    }
+    findIntNum(m,n,arr);
+</script>
+</body>
+</html>
