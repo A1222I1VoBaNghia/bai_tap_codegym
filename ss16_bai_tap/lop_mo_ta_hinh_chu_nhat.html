@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(length,width) {
+            this.length = length;
+            this.width = width;
+        }
+        calcCircumference(){
+            document.write("Chu vi hình chữ nhật là: "+ (this.length + this.width)*2);
+        }
+        calcArea(){
+            document.write("Chu vi hình chữ nhật là: "+ this.length*this.width);
+        }
+        setNewLength(newLength){
+            this.length = newLength;
+
+        }
+        setNewWidth(newWidth){
+            this.width = newWidth;
+        }
+    }
+    let length = +prompt("Nhập chiều dài");
+    let width = +prompt("Nhập chiều rộng");
+    let R1 = new Rectangle(length,width);
+    R1.calcArea(length,width);
+    R1.calcCircumference(length,width);
+    let newLength = +prompt("Nhập chiều dài mới");
+    let newWidth = +prompt("Nhập chiều rộng mới");
+    R1.setNewLength(newLength);
+    R1.setNewWidth(newWidth);
+    R1.calcArea();
+    R1.calcCircumference();
+</script>
+
+</body>
+</html>

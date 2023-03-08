@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+        celcConvertFar(){
+            document.write("Độ F là "+ (this.celcius*1.8+32)+"<br>");
+        }
+        celcConvertKenvin(){
+            document.write("Độ K là "+ (this.celcius+273.15)+'<br>');
+        }
+        setCecius(newC){
+            this.celcius = newC;
+        }
+    }
+    let celc = +prompt("Nhập độ C");
+    while (celc<-273){
+        celc = +prompt("Nhập độ C");
+    }
+    let Celc = new Temperature(celc);
+    Celc.celcConvertFar(celc);
+    Celc.celcConvertKenvin(celc);
+    Celc.setCecius(25);
+    Celc.celcConvertFar();
+    Celc.celcConvertKenvin();
+</script>
+</body>
+</html>

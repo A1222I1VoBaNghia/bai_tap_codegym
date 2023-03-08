@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let strArr = [];
+    let str;
+    let flat;
+    class Mobile {
+        constructor(state,battery,messing,messFrom, messTo) {
+            this.state = state;
+            this.battery = battery;
+            this.messing = messing;
+            this.messFrom = messFrom;
+            this.messTo = messTo;
+        }
+        getState() {
+            if (this.state === 'on') {
+                flat = true;
+                alert('Bật điện thoại');
+            } else if (this.state === 'off') {
+                flat = false;
+                alert('Tắt điện thoại');
+            }
+        }
+        setState(newState){
+            newState = prompt('Nhập trạng thái (on/off)');
+            this.state = newState ;
+        }
+        plugginBattery(){
+            while (this.battery<100){
+                this.battery++;
+                alert('Phần trăm pin '+this.battery);
+            }
+        }
+        setMessing(newMess){
+            if(flat){
+            newMess = prompt('Soạn tin nhắn');
+            this.messing = newMess;
+            this.battery--;
+            }
+        }
+        getMessTo() {
+            if(flat) {
+                this.messTo = this.messing;
+                str = this.messTo;
+                strArr.push(str);
+                this.battery--;
+                return strArr;
+            }
+        }
+        getMessFrom(){
+            if(flat) {
+                this.messFrom = str;
+                alert(this.messFrom + 'tin nhắn đến');
+                this.battery--;
+            }
+        }
+
+    }
+    let Iphone = new Mobile('on',78);
+    let Nokia = new Mobile();
+    Iphone.setState();
+    Iphone.getState();
+    // Iphone.plugginBattery();
+    Nokia.setMessing();
+    Nokia.getMessTo();
+    Iphone.getMessFrom();
+    
+
+
+
+</script>
+</body>
+</html>
