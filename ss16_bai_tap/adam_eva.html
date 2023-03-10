@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+
+        getAppleWeight() {
+            return this.weight;
+        }
+        isEmpty() {
+            if (this.weight > 0) {
+                return true;
+            }
+        }
+        decrease() {
+            return this.weight--;
+        }
+    }
+    class Human{
+        constructor(name,gender,weightHuman) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman = weightHuman;
+        }
+        speak(){
+            let str = prompt("Nhập lời thoại của nhân vật");
+            document.write(this.name + " nói " + str);
+        }
+        checkApple(apple){
+            if(apple.getAppleWeight()>0){
+                return true;
+            }
+        }
+        eatApple(apple) {
+            if (this.checkApple(apple)) {
+                apple.decrease();
+                this.weightHuman++;
+                document.write('Khối lượng quả táo là:'+apple.decrease()+ '<br>');
+                document.write('Cân năng người là:'+ this.weightHuman+'<br>');
+            }
+        }
+    }
+    let Apple1 = new Apple();
+    let Adam = new Human('Adam','Nam',70);
+    Apple1.getAppleWeight();
+    Adam.checkApple(Apple1);
+    Adam.eatApple(Apple1);
+    Adam.eatApple(Apple1);
+    Adam.eatApple(Apple1);
+
+
+
+
+</script>
+</body>
+</html>
