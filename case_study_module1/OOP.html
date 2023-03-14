@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table {
+            border: 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+<table>
+    <tr>
+        <td>
+            <button onclick="addStudent()">Thêm mới học viên</button>
+        </td>
+        <td>
+            <button onclick="fixInfoStudent()">Sửa thông tin học viên</button>
+        </td>
+        <td>
+            <button onclick="deleteStudent()">Xóa học viên</button>
+        </td>
+    </tr>
+</table>
+<div id="table"></div>
+<script>
+    function makeArr(str) {
+        let Arr=[];
+        for (let i = 0; i<str.length; i++) {
+            Arr[i]=str.slice(i,1);
+        }
+        return Arr;
+    }
+    function Compare(Arr) {
+        let flag = true;
+        let numArr=['0','1','2','3','4','5','6','7','8','9'];
+        for (let i = 0; i <Arr.length; i++) {
+            for (let j = 0; j <10 ; j++) {
+               if(Arr[i]===numArr[j]){
+                   flag=true;
+                   break;
+               }else
+                   flag=false;
+            }
+        }
+        return flag;
+    }
+    class Student{
+        constructor(code,name,course,email,birthday,module) {
+            this.code = code;
+            this.name = name;
+            this.course = course;
+            this.email = email;
+            this.birthday = birthday;
+            this.module = module;
+        }
+        setCode(newCode){
+            let code1 = prompt('Nhập mã học viên');
+            let codeArr = makeArr(code1);
+            while ((code1.length!==4)||Compare(codeArr)===false){
+                alert('Mã học viên là số gồm 4 chữ số');
+                code1 = prompt('Nhập mã học viên');
+                codeArr = makeArr(code1);
+            }
+            newCode="HV-"+code1;
+            this.code = newCode;
+        }
+        getCode(){
+            return this.code;
+        }
+        setName(newName){
+            newName = prompt('Nhập Họ và tên học viên');
+            while (newName.length>60){
+                alert('Nhập quá độ dài cho phép (Tối đa: 60 ký tự)');
+                newName = prompt('Nhập Họ và tên học viên');
+            }
+            this.name = newName;
+        }
+        getName(){
+            return this.name;
+        }
+        setCourse(newCourse){
+            newCourse = prompt("Nhập khóa học");
+            this.course = newCourse;
+        }
+        getCourse(){
+            return this.course;
+        }
+        setEmail(newEmail){
+            newEmail = prompt("Nhập email học viên");
+            this.email = newEmail;
+        }
+        getEmail(){
+            return this.email;
+        }
+        setBirthday(newBirthday){
+            newBirthday = prompt("Nhập ngày sinh học viên");
+            this.birthday = newBirthday;
+        }
+        getBirthday(){
+            return this.birthday;
+        }
+        setModule(newModule){
+            newModule = prompt('Nhập module học viên đang học');
+            this.module = newModule;
+        }
+        getModule(){
+            return this.module;
+        }
+    }
+    let studentList = [];
+    display(studentList);
+    function  display(list) {
+        let table = "<table style='text-align: left' border='1px'>" +
+            "<tr>" +
+            "<th style='width: 40px'>STT</th>"+
+            "<th style='width: 200px'>Tên</th>"+
+            "<th style='width: 100px'>Khóa</th>"+
+            "<th style='width: 200px'>Email</th>"+
+            "<th style='width: 100px'>Ngày sinh</th>"+
+            "</tr>"
+
+            for(let i = 0;i<list.length;i++){
+                table +='<tr>' +
+                    '<td>'+list[i].code+'</td>' +
+                    '<td>'+(list[i].name)+'</td>' +
+                    '<td>'+(list[i].course)+'</td>' +
+                    '<td>'+(list[i].email)+'</td>' +
+                    '<td>'+(list[i].birthday)+'</td>' +
+                    '</tr>'
+            }
+        table+='</table>';
+        document.getElementById("table").innerHTML = table;
+            }
+    function addStudent() {
+        let student = new Student();
+        // let flat1 = true;
+        // let n = student.setCode();
+        // for (let i = 0; i <studentList.length ; i++) {
+        //     if(n===('HV-'+ studentList[i].getCode())){
+        //         alert('Mã học viên đã tồn tại');
+        //         flat1 = false;
+        //         break;
+        //     }else
+        //         flat1 = true;
+        // }
+        // if(flat1){
+            student.setCode();
+            student.setName();
+            student.setCourse();
+            student.setEmail();
+            student.setBirthday();
+            studentList.push(student);
+            display(studentList);
+        }
+    function fixInfoStudent() {
+        let num = +prompt('Nhập mã số học viên để kiểm tra');
+        let flat = false;
+        for (let i =0; i< studentList.length;i++) {
+            if ('HV-'+num === studentList[i].code) {
+                studentList[i].setName();
+                studentList[i].setCourse();
+                studentList[i].setEmail();
+                studentList[i].setBirthday();
+                display(studentList);
+                flat = true;
+                break;
+            }
+        }if(flat===false){
+            alert('Mã học viên không tồn tại');
+        }
+    }
+    function deleteStudent() {
+        let num = +prompt('Nhập mã số học viên để xóa');
+        let flat = false;
+        for (let i = 0; i < studentList.length; i++) {
+            if ('HV-'+num === studentList[i].code) {
+                let value = window.confirm('Bạn có muốn xóa học viên này không?');
+                if (value) {
+                    studentList.splice(i,1);
+                    display(studentList);
+                    flat = true;
+                }
+                display(studentList);
+            }
+        }
+        if(flat===false){
+            alert('Mã học viên không tồn tại');
+        }
+    }
+</script>
+</body>
+</html>

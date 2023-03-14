@@ -40,15 +40,15 @@
         let flat = true;
         for (l= arrA.length-1;l>=0;l--){
             if (arrA[l]===arrB[k]){
-                arrA.splice(l,l+1);
-                arrB.splice(k,k+1);
+                arrA.splice(l,1);
+                arrB.splice(k,1);
                 flat = false;
                 break;
             }else
                 flat = true;
         }
         if (flat === true){
-            missingValue.push(arrB.splice(k,k+1));
+            missingValue.push(arrB.splice(k,1));
         }
     }
     document.write("Mảng MissingValue là: "+ missingValue);

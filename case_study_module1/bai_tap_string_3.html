@@ -22,8 +22,8 @@
     for (let k = str1Arr.length-1; k>=0 ; k--) {
         for (let l = str2Arr.length-1; l >=0 ; l--) {
             if (str1Arr[k]===str2Arr[l]){
-                str1Arr.splice(k,k+1);
-                str2Arr.splice(l,l+1);
+                str1Arr.splice(k,1);
+                str2Arr.splice(l,1);
                 count++;
             }
         }
