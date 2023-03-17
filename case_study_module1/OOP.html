@@ -27,27 +27,6 @@
 </table>
 <div id="table"></div>
 <script>
-    function makeArr(str) {
-        let Arr=[];
-        for (let i = 0; i<str.length; i++) {
-            Arr[i]=str.slice(i,1);
-        }
-        return Arr;
-    }
-    function Compare(Arr) {
-        let flag = true;
-        let numArr=['0','1','2','3','4','5','6','7','8','9'];
-        for (let i = 0; i <Arr.length; i++) {
-            for (let j = 0; j <10 ; j++) {
-               if(Arr[i]===numArr[j]){
-                   flag=true;
-                   break;
-               }else
-                   flag=false;
-            }
-        }
-        return flag;
-    }
     class Student{
         constructor(code,name,course,email,birthday,module) {
             this.code = code;
@@ -59,14 +38,13 @@
         }
         setCode(newCode){
             let code1 = prompt('Nhập mã học viên');
-            let codeArr = makeArr(code1);
-            while ((code1.length!==4)||Compare(codeArr)===false){
+            while ((code1.length!==4)){
                 alert('Mã học viên là số gồm 4 chữ số');
                 code1 = prompt('Nhập mã học viên');
-                codeArr = makeArr(code1);
             }
-            newCode="HV-"+code1;
+            newCode=code1;
             this.code = newCode;
+            return this.code;
         }
         getCode(){
             return this.code;
@@ -104,7 +82,11 @@
             return this.birthday;
         }
         setModule(newModule){
-            newModule = prompt('Nhập module học viên đang học');
+            newModule = +prompt('Nhập module học viên đang học');
+            while(newModule<0&&newModule>6){
+                alert('Module chỉ từ 1 đến ');
+                newModule = +prompt('Nhập module học viên đang học');
+            }
             this.module = newModule;
         }
         getModule(){
@@ -137,30 +119,28 @@
             }
     function addStudent() {
         let student = new Student();
-        // let flat1 = true;
-        // let n = student.setCode();
-        // for (let i = 0; i <studentList.length ; i++) {
-        //     if(n===('HV-'+ studentList[i].getCode())){
-        //         alert('Mã học viên đã tồn tại');
-        //         flat1 = false;
-        //         break;
-        //     }else
-        //         flat1 = true;
-        // }
-        // if(flat1){
-            student.setCode();
+        let flag = true;
+        let n = student.setCode();
+        for (let i = 0; i <studentList.length ; i++) {
+            if (n===studentList[i].getCode()){
+                flag = false;
+                break;
+            }else flag = true;
+        }
+        if(flag){
             student.setName();
             student.setCourse();
             student.setEmail();
             student.setBirthday();
             studentList.push(student);
             display(studentList);
-        }
+        }else alert("Mã số sinh viên đã tồn tại");
+    }
     function fixInfoStudent() {
         let num = +prompt('Nhập mã số học viên để kiểm tra');
         let flat = false;
         for (let i =0; i< studentList.length;i++) {
-            if ('HV-'+num === studentList[i].code) {
+            if (num === studentList[i].code) {
                 studentList[i].setName();
                 studentList[i].setCourse();
                 studentList[i].setEmail();
@@ -177,7 +157,7 @@
         let num = +prompt('Nhập mã số học viên để xóa');
         let flat = false;
         for (let i = 0; i < studentList.length; i++) {
-            if ('HV-'+num === studentList[i].code) {
+            if (num === studentList[i].code) {
                 let value = window.confirm('Bạn có muốn xóa học viên này không?');
                 if (value) {
                     studentList.splice(i,1);
