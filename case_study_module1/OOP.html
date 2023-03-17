@@ -51,11 +51,12 @@
         }
         setName(newName){
             newName = prompt('Nhập Họ và tên học viên');
-            while (newName.length>60){
-                alert('Nhập quá độ dài cho phép (Tối đa: 60 ký tự)');
+            while (newName.length>50){
+                alert('Nhập quá độ dài cho phép (Tối đa: 50 ký tự)');
                 newName = prompt('Nhập Họ và tên học viên');
             }
             this.name = newName;
+            return this.name;
         }
         getName(){
             return this.name;
@@ -63,6 +64,7 @@
         setCourse(newCourse){
             newCourse = prompt("Nhập khóa học");
             this.course = newCourse;
+            return this.course;
         }
         getCourse(){
             return this.course;
@@ -77,6 +79,7 @@
         setBirthday(newBirthday){
             newBirthday = prompt("Nhập ngày sinh học viên");
             this.birthday = newBirthday;
+            return this.birthday;
         }
         getBirthday(){
             return this.birthday;
@@ -84,10 +87,11 @@
         setModule(newModule){
             newModule = +prompt('Nhập module học viên đang học');
             while(newModule<0&&newModule>6){
-                alert('Module chỉ từ 1 đến ');
+                alert('Module chỉ từ 1 đến 6 ');
                 newModule = +prompt('Nhập module học viên đang học');
             }
             this.module = newModule;
+            return this.module;
         }
         getModule(){
             return this.module;
@@ -140,7 +144,7 @@
         let num = +prompt('Nhập mã số học viên để kiểm tra');
         let flat = false;
         for (let i =0; i< studentList.length;i++) {
-            if (num === studentList[i].code) {
+            if (num === studentList[i].getCode()) {
                 studentList[i].setName();
                 studentList[i].setCourse();
                 studentList[i].setEmail();
@@ -157,7 +161,7 @@
         let num = +prompt('Nhập mã số học viên để xóa');
         let flat = false;
         for (let i = 0; i < studentList.length; i++) {
-            if (num === studentList[i].code) {
+            if (num === studentList[i].getCode()) {
                 let value = window.confirm('Bạn có muốn xóa học viên này không?');
                 if (value) {
                     studentList.splice(i,1);
